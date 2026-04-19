@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Injector",
+  "version": "1.0",
+  "description": "Powerful AI Assistant for YouTube, Fastwork, and CPX Surveys",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "clipboardRead",
+    "clipboardWrite",
+    "storage",
+    "unlimitedStorage",
+    "system.display",
+    "sidePanel",
+    "tabs",
+    "alarms",
+    "downloads",
+    "downloads.open",
+    "nativeMessaging"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.facebook.com/*",
+        "*://business.facebook.com/*",
+        "*://gemini.google.com/*",
+        "*://chat.fastwork.co/*",
+        "*://jobboard.fastwork.co/*",
+        "file:///d:/model/secretSend/index.html",
+        "file:///D:/model/secretSend/index.html",
+        "http://127.0.0.1:5000/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ],
+      "all_frames": true
+    }
+  ],
+  "host_permissions": [
+    "*://api.github.com/*",
+    "<all_urls>",
+    "file:///*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
